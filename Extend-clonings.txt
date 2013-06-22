@@ -1,0 +1,37 @@
+Git based:
+git clone --mirror git://git.code.sf.net/p/openfoam-extend/DensityBasedTurbo openfoam-extend-DensityBasedTurbo.git
+git clone --mirror git://git.code.sf.net/p/openfoam-extend/OpenFOAM-1.6-ext openfoam-extend-OpenFOAM-1.6-ext.git
+git clone --mirror git://git.code.sf.net/p/openfoam-extend/ShipHydroSIG openfoam-extend-ShipHydroSIG.git
+git clone --mirror git://git.code.sf.net/p/openfoam-extend/UsbStickCreation openfoam-extend-UsbStickCreation.git
+
+SVN based:
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Core/OpenFOAM-1.5-dev/ openfoam-extend-Core-OpenFOAM-1.5-dev
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.5/OSIG/TurboMachinery openfoam-extend-Breeder1.5-OSIG-TurboMachinery
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.5/OSIG/Turbulence openfoam-extend-Breeder1.5-OSIG-Turbulence
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.5/other/testHarness/ openfoam-extend-Breeder1.5-other-testHarness
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.5/libraries/alternateChemistryModels/ openfoam-extend-Breeder1.5-libraries-alternateChemistryModels
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.5/libraries/canteraThermosChemistry/ openfoam-extend-Breeder1.5-libraries-canteraThermosChemistry
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.5/libraries/equationReaderExtension/ openfoam-extend-Breeder1.5-libraries-equationReaderExtension
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.5/libraries/multiSolverExtension/ openfoam-extend-Breeder1.5-libraries-multiSolverExtension
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.5/solvers/AlternateChemistry/ openfoam-extend-Breeder1.5-solvers-AlternateChemistry
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.5/solvers/other/solidParticleFoam/ openfoam-extend-Breeder1.5-solvers-other-solidParticleFoam
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.5/solvers/other/IcoLagrangianFoam/ openfoam-extend-Breeder1.5-solvers-other-IcoLagrangianFoam
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.5/solvers/other/IcoStructFoam/ openfoam-extend-Breeder1.5-solvers-other-IcoStructFoam
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.5/utilities/parallelProcessing/WriteDecomposition/ openfoam-extend-Breeder1.5-utilities-parallelProcessing-WriteDecomposition
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.5/utilities/mesh/manipulation/MakeAxialMesh/ openfoam-extend-Breeder1.5-utilities-mesh-manipulation-MakeAxialMesh
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.5/utilities/preProcessing/simpleViewer_1.6/ openfoam-extend-Breeder1.5-utilities-preProcessing-simpleViewer_1.6
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.5/utilities/preProcessing/simpleViewer/ openfoam-extend-Breeder1.5-utilities-preProcessing-simpleViewer
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.6/OSIG/Turbulence/ openfoam-extend-Breeder1.6-OSIG-Turbulence
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.6/OSIG/TurboMachinery/ openfoam-extend-Breeder1.6-OSIG-TurboMachinery
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.6/libraries/IOReferencerObject/ openfoam-extend-Breeder1.6-libraries-IOReferencerObject
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.6/libraries/equationReaderExtension/ openfoam-extend-Breeder1.6-libraries-equationReaderExtension
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.6/other/patchMacOSX/ openfoam-extend-Breeder1.6-other-patchMacOSX
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.6/other/waves2Foam/ openfoam-extend-Breeder1.6-other-waves2Foam
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.6/shipHydrodynamicIG/ openfoam-extend-Breeder1.6-shipHydrodynamicIG
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.6/utilities/mesh/manipulation/MakeAxialMesh/ openfoam-extend-Breeder1.6-utilities-mesh-manipulation-MakeAxialMesh
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.7/libraries/swak4Foam/ openfoam-extend-Breeder1.7-libraries-swak4Foam
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_2.0/OSIG/TurboMachinery/ openfoam-extend-Breeder2.0-OSIG-TurboMachinery
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_2.0/libraries/swak4Foam/ openfoam-extend-Breeder2.0-libraries-swak4Foam
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_2.0/solvers/other/solidParticleFoam/ openfoam-extend-Breeder2.0-solvers-other-solidParticleFoam
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_2.0/utilities/mesh/manipulation/MakeAxialMesh/ openfoam-extend-Breeder2.0-utilities-mesh-manipulation-MakeAxialMesh
+
