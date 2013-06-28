@@ -38,6 +38,7 @@ done
 #SVN based:
 for svnFolder in \
   openfoam-extend-Core-OpenFOAM-1.5-dev \
+  openfoam-extend-Breeder-other-scripting-PyFoam \
   openfoam-extend-Breeder1.5-OSIG-TurboMachinery \
   openfoam-extend-Breeder1.5-OSIG-Turbulence \
   openfoam-extend-Breeder1.5-other-testHarness \

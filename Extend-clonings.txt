@@ -6,6 +6,7 @@ git clone --mirror git://git.code.sf.net/p/openfoam-extend/UsbStickCreation open
 
 SVN based:
 git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Core/OpenFOAM-1.5-dev/ openfoam-extend-Core-OpenFOAM-1.5-dev
+git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder/other/scripting/PyFoam/ openfoam-extend-Breeder-other-scripting-PyFoam
 git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.5/OSIG/TurboMachinery openfoam-extend-Breeder1.5-OSIG-TurboMachinery
 git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.5/OSIG/Turbulence openfoam-extend-Breeder1.5-OSIG-Turbulence
 git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_1.5/other/testHarness/ openfoam-extend-Breeder1.5-other-testHarness
