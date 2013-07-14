@@ -30,6 +30,7 @@ do
   cd $gitFolder
   echo Updating repo $gitFolder
   git remote update --prune
+  git gc
   cd ..
 
 done
@@ -72,6 +73,7 @@ do
   cd $svnFolder
   echo Updating repo $svnFolder
   git svn rebase
+  git gc
   cd ..
 
 done
