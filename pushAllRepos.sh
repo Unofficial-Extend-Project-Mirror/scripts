@@ -27,10 +27,12 @@ for gitFolder in \
   openfoam-extend-UsbStickCreation.git
 do
 
-  cd $gitFolder
-  echo Pushing repo $gitFolder
-  git push github --mirror
-  cd ..
+  if [ -d $gitFolder ]; then
+    cd $gitFolder
+    echo Pushing repo $gitFolder
+    git push github --mirror
+    cd ..
+  fi
 
 done
 
@@ -69,10 +71,12 @@ for svnFolder in \
   openfoam-extend-Breeder2.0-utilities-mesh-manipulation-MakeAxialMesh 
 do
 
-  cd $svnFolder
-  echo Pushing repo $svnFolder
-  git push github
-  cd ..
+  if [ -d $gitFolder ]; then
+    cd $svnFolder
+    echo Pushing repo $svnFolder
+    git push github
+    cd ..
+  fi
 
 done
 
