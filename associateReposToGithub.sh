@@ -29,11 +29,13 @@ for gitFolder in \
   openfoam-extend-UsbStickCreation.git
 do
 
-  cd $gitFolder
-  echo Establishing git connection with $gitFolder
-  git remote add github git@github.com:${GITHUB_ACCOUNT_NAME}/${gitFolder}
-  git push github --mirror 
-  cd ..
+  if [ -d $gitFolder ]; then
+    cd $gitFolder
+    echo Establishing git connection with $gitFolder
+    git remote add github git@github.com:${GITHUB_ACCOUNT_NAME}/${gitFolder}
+    git push github --mirror 
+    cd ..
+  fi
 
 done
 
@@ -72,10 +74,12 @@ for svnFolder in \
   openfoam-extend-Breeder2.0-utilities-mesh-manipulation-MakeAxialMesh 
 do
 
-  cd $svnFolder
-  echo Establishing git connection with $svnFolder
-  git remote add github git@github.com:${GITHUB_ACCOUNT_NAME}/${svnFolder}.git
-  git push github
-  cd ..
+  if [ -d $gitFolder ]; then
+    cd $svnFolder
+    echo Establishing git connection with $svnFolder
+    git remote add github git@github.com:${GITHUB_ACCOUNT_NAME}/${svnFolder}.git
+    git push github
+    cd ..
+  fi
 
 done
