@@ -1,0 +1,58 @@
+#/bin/bash
+
+cd $OPENSHIFT_DATA_DIR
+. .bash_profile
+
+current_time=$(date "+%Y.%m.%d-%H.%M.%S")
+current_date=$(date "+%Y.%m.%d")
+LOGINDEX=logs.html
+
+( echo "TIMESTAMP: $current_time" && \
+echo "========================" && \
+echo "PULLING ALL REPOSITORIES" && \
+echo "========================" && \
+./pullAllRepos.sh && \
+echo "PUSHING ALL REPOSITORIES" && \
+echo "========================" && \
+./pushAllRepos.sh ) \
+  >> ${OPENSHIFT_REPO_DIR}wsgi/static/pullPush.log.$current_date 2>&1
+
+cd ${OPENSHIFT_REPO_DIR}wsgi/static
+
+for a in *.log.*; do
+
+  case $a in
+
+    *.log.*.gz )
+      : # do nothing
+      ;; 
+
+    *.log.[0-9]*.* )
+      if [ "$a" != "pullPush.log.$current_date" ]; then
+        
+        gzip $a
+        
+      fi
+      ;;
+
+  esac
+done
+
+
+
+echo "<html>
+<head><title>$LOGINDEX</title>
+</head>
+<body bgcolor='orange'>" > $LOGINDEX
+
+for a in *.log.*; do
+  
+# creating links to the files
+echo "<br><a href='$a'>$a</a>" >> $LOGINDEX
+
+done
+
+# creating end tags for HTML
+
+echo "</body>
+</html>" >> $LOGINDEX
