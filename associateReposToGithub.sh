@@ -74,7 +74,7 @@ for svnFolder in \
   openfoam-extend-Breeder2.0-utilities-mesh-manipulation-MakeAxialMesh 
 do
 
-  if [ -d $gitFolder ]; then
+  if [ -d $svnFolder ]; then
     cd $svnFolder
     echo Establishing git connection with $svnFolder
     git remote add github git@github.com:${GITHUB_ACCOUNT_NAME}/${svnFolder}.git
