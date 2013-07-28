@@ -19,25 +19,6 @@
 #     Bruno Santos <wyldckat@github>
 #
 
-#Git based:
-for gitFolder in \
-  openfoam-extend-DensityBasedTurbo.git \
-  openfoam-extend-OpenFOAM-1.6-ext.git \
-  openfoam-extend-ShipHydroSIG.git \
-  openfoam-extend-UsbStickCreation.git
-do
-
-  if [ -d $gitFolder ]; then
-    cd $gitFolder
-    echo Updating repo $gitFolder
-    git remote update --prune
-    git gc
-    cd ..
-  fi
-
-done
-
-
 #SVN based:
 for svnFolder in \
   openfoam-extend-Core-OpenFOAM-1.5-dev \
@@ -74,11 +55,12 @@ do
 
   if [ -d $svnFolder ]; then
     cd $svnFolder
-    echo Updating repo $svnFolder
-    git svn rebase
+    echo Updating repo $svnFolder, through removing the local copy and pulling a new one back in
+    rm -rf *
+    git gc
+    git checkout -- *
     cd ..
   fi
 
 done
 
-./specialGarbageCollection.sh
