@@ -1,0 +1,2 @@
+#!/bin/bash
+/usr/bin/ssh -o GlobalKnownHostsFile="${OPENSHIFT_DATA_DIR}.ssh/known_hosts" -i "${OPENSHIFT_DATA_DIR}.ssh/id_rsa" $@
