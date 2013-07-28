@@ -74,7 +74,7 @@ do
   if [ -d $svnFolder ]; then
     cd $svnFolder
     echo Pushing repo $svnFolder
-    git push github
+    git push github --all
     cd ..
   fi
 
