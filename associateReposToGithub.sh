@@ -78,6 +78,7 @@ do
     cd $svnFolder
     echo Establishing git connection with $svnFolder
     git remote add github git@github.com:${GITHUB_ACCOUNT_NAME}/${svnFolder}.git
+    git branch --set-upstream-to=github/master master
     git push github
     cd ..
   fi
