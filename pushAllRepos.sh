@@ -71,7 +71,7 @@ for svnFolder in \
   openfoam-extend-Breeder2.0-utilities-mesh-manipulation-MakeAxialMesh 
 do
 
-  if [ -d $gitFolder ]; then
+  if [ -d $svnFolder ]; then
     cd $svnFolder
     echo Pushing repo $svnFolder
     git push github
