@@ -27,11 +27,13 @@ for gitFolder in \
   openfoam-extend-UsbStickCreation.git
 do
 
-  cd $gitFolder
-  echo Updating repo $gitFolder
-  git remote update --prune
-  git gc
-  cd ..
+  if [ -d $gitFolder ]; then
+    cd $gitFolder
+    echo Updating repo $gitFolder
+    git remote update --prune
+    git gc
+    cd ..
+  fi
 
 done
 
@@ -70,11 +72,13 @@ for svnFolder in \
   openfoam-extend-Breeder2.0-utilities-mesh-manipulation-MakeAxialMesh 
 do
 
-  cd $svnFolder
-  echo Updating repo $svnFolder
-  git svn rebase
-  git gc
-  cd ..
+  if [ -d $svnFolder ]; then
+    cd $svnFolder
+    echo Updating repo $svnFolder
+    git svn rebase
+    git gc
+    cd ..
+  fi
 
 done
 
