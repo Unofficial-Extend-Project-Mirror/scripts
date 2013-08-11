@@ -54,3 +54,6 @@ done
 
 echo "</body>
 </html>" >> $LOGINDEX
+
+$OPENSHIFT_DATA_DIR/generateRSS
+
