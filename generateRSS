@@ -8,30 +8,38 @@ echo -e '<rss version="2.0">' >> $RSSFILENAME
 echo -e '<channel>' >> $RSSFILENAME
 echo -e ' <title>Unofficial-Extend-Project-Mirror</title>' >> $RSSFILENAME
 echo -e ' <description>This is the RSS feed for the logs that this machine generates</description>' >> $RSSFILENAME
-echo -e ' <link>'${OPENSHIFT_APP_DNS}'/static/logs.html</link>' >> $RSSFILENAME
+echo -e ' <link>'http://${OPENSHIFT_APP_DNS}'/static/logs.html</link>' >> $RSSFILENAME
 echo -e ' <pubDate>'$(date)'</pubDate>' >> $RSSFILENAME
 echo -e ' <ttl>7200</ttl>' >> $RSSFILENAME
 
 
 for a in *.log; do
 
-  echo -e ' <item>' >> $RSSFILENAME
-  echo -e '  <title>'$a'</title>' >> $RSSFILENAME
-  echo -e '  <description>This is the latest log file.</description>' >> $RSSFILENAME
-  echo -e '  <link>'${OPENSHIFT_APP_DNS}/static/$a'</link>' >> $RSSFILENAME
-  echo -e '  <pubDate>'$(date)'</pubDate>' >> $RSSFILENAME
-  echo -e ' </item>' >> $RSSFILENAME
+  if [ -e $a ]; then
+
+    echo -e ' <item>' >> $RSSFILENAME
+    echo -e '  <title>'$a'</title>' >> $RSSFILENAME
+    echo -e '  <description>This is the latest log file.</description>' >> $RSSFILENAME
+    echo -e '  <link>'http://${OPENSHIFT_APP_DNS}/static/$a'</link>' >> $RSSFILENAME
+    echo -e '  <pubDate>'$(date)'</pubDate>' >> $RSSFILENAME
+    echo -e ' </item>' >> $RSSFILENAME
+
+  fi
 
 done
 
 for a in *.log.gz; do
 
-  echo -e ' <item>' >> $RSSFILENAME
-  echo -e '  <title>'$a'</title>' >> $RSSFILENAME
-  echo -e '  <description>This is one of the old log files.</description>' >> $RSSFILENAME
-  echo -e '  <link>'${OPENSHIFT_APP_DNS}/static/$a'</link>' >> $RSSFILENAME
-  echo -e '  <pubDate>'$(echo $a | sed -e 's=^[a-zA-Z]*\.==' -e 's=\.log.gz$==' -e 's=\.=/=g')'</pubDate>' >> $RSSFILENAME
-  echo -e ' </item>' >> $RSSFILENAME
+  if [ -e $a ]; then
+
+    echo -e ' <item>' >> $RSSFILENAME
+    echo -e '  <title>'$a'</title>' >> $RSSFILENAME
+    echo -e '  <description>This is one of the old log files.</description>' >> $RSSFILENAME
+    echo -e '  <link>'http://${OPENSHIFT_APP_DNS}/static/$a'</link>' >> $RSSFILENAME
+    echo -e '  <pubDate>'$(echo $a | sed -e 's=^[a-zA-Z]*\.==' -e 's=\.log.gz$==' -e 's=\.=/=g')'</pubDate>' >> $RSSFILENAME
+    echo -e ' </item>' >> $RSSFILENAME
+
+  fi
 
 done
 
