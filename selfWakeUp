@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#Reference: https://www.openshift.com/forums/openshift/cron-jobs-did-not-run
+
+echo "Staying awake..."
+curl -v ${OPENSHIFT_APP_DNS}/static/logs.html
