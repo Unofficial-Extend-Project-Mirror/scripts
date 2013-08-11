@@ -22,27 +22,18 @@ echo "========================" && \
 echo "PUSHING ALL REPOSITORIES" && \
 echo "========================" && \
 ./pushAllRepos.sh ) \
-  >> ${OPENSHIFT_REPO_DIR}wsgi/static/pullPush.log.$current_date 2>&1
+  >> ${OPENSHIFT_REPO_DIR}wsgi/static/pullPush.$current_date.log 2>&1
 
 cd ${OPENSHIFT_REPO_DIR}wsgi/static
 
-for a in *.log.*; do
+for a in *.log; do
 
-  case $a in
+  if [ "$a" != "pullPush.$current_date.log" ]; then
+    
+    gzip $a
+    
+  fi
 
-    *.log.*.gz )
-      : # do nothing
-      ;; 
-
-    *.log.[0-9]*.* )
-      if [ "$a" != "pullPush.log.$current_date" ]; then
-        
-        gzip $a
-        
-      fi
-      ;;
-
-  esac
 done
 
 
@@ -50,7 +41,7 @@ done
 echo "<html>
 <head><title>$LOGINDEX</title>
 </head>
-<body bgcolor='orange'>" > $LOGINDEX
+<body bgcolor='grey'>" > $LOGINDEX
 
 for a in *.log.*; do
   
