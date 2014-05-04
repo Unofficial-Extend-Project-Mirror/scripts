@@ -38,6 +38,17 @@ git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_2.0/solv
 git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_2.0/utilities/mesh/manipulation/MakeAxialMesh/ openfoam-extend-Breeder2.0-utilities-mesh-manipulation-MakeAxialMesh
 
 
+#hg to git
+hg clone http://hg.code.sf.net/p/openfoam-extend/swak4Foam openfoam-extend-swak4Foam-dev
+cd openfoam-extend-swak4Foam-dev
+hg checkout --clean null
+echo "[extensions]" >> .hg/hgrc
+echo "hgext.bookmarks =" >> .hg/hgrc
+echo "hggit =" >> .hg/hgrc
+hg branches | sed 's=\([a-zA-Z0-9_./-]*\).*=\1=' | while read line; do hg bookmark -r $line ${line}_git; done
+git init --bare .hg/openfoam-extend-swak4Foam-dev.git
+cd ..
+
 
 #Separating each repo to the respective mirroring machine:
 
