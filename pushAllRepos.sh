@@ -90,7 +90,7 @@ do
   if [ -d $hgFolder ]; then
     cd $hgFolder
     echo Updating repo $hgFolder
-    hg push
+    hg push 2>&1 | sed 's='$PWD'/=='
     
     cd .hg/${hgFolder}.git
     git push github --all
