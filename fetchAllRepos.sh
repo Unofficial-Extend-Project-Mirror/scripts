@@ -82,3 +82,23 @@ do
   fi
 
 done
+
+
+#Mercurial based:
+for hgFolder in \
+  openfoam-extend-swak4Foam-dev
+do
+
+  if [ -d $hgFolder ]; then
+    cd $hgFolder
+    echo Updating repo $hgFolder
+    hg pull
+    hg branches | sed 's=\([a-zA-Z0-9_./-]*\).*=\1=' | while read line; do 
+      if ! hg bookmark | grep "${line}_git" > /dev/null; then 
+        hg bookmark -r $line ${line}_git
+      fi
+    done
+    cd ..
+  fi
+
+done

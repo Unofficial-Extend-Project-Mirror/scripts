@@ -71,3 +71,25 @@ do
 
 done
 
+
+#Mercurial based:
+for hgFolder in \
+  openfoam-extend-swak4Foam-dev
+do
+
+  if [ -d $hgFolder ]; then
+    cd $hgFolder
+    echo Garbage collection on repo $hgFolder
+
+    cd .hg/git
+    git gc
+    cd ../..
+    
+    cd .hg/${hgFolder}.git
+    git gc
+    cd ../..
+    
+    cd ..
+  fi
+
+done

@@ -85,3 +85,27 @@ do
   fi
 
 done
+
+
+#Mercurial based:
+for hgFolder in \
+  openfoam-extend-swak4Foam-dev
+do
+
+  if [ -d $hgFolder ]; then
+    cd $hgFolder
+    echo Establishing git connection with $hgFolder
+    echo "[paths]" >> .hg/hgrc
+    echo "default-push = .hg/${hgFolder}.git" >> .hg/hgrc
+    echo "[git]" >> .hg/hgrc
+    echo "branch_bookmark_suffix=_git" >> .hg/hgrc
+
+    cd .hg/${hgFolder}.git
+    git remote add github git@github.com:${GITHUB_ACCOUNT_NAME}/${hgFolder}
+    git push github --all
+    cd ../..
+    
+    cd ..
+  fi
+
+done

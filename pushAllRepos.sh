@@ -81,3 +81,22 @@ do
 
 done
 
+
+#Mercurial based:
+for hgFolder in \
+  openfoam-extend-swak4Foam-dev
+do
+
+  if [ -d $hgFolder ]; then
+    cd $hgFolder
+    echo Updating repo $hgFolder
+    hg push
+    
+    cd .hg/${hgFolder}.git
+    git push github --all
+    cd ../..
+    
+    cd ..
+  fi
+
+done
