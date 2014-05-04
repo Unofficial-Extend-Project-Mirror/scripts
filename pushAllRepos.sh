@@ -94,6 +94,7 @@ do
     
     cd .hg/${hgFolder}.git
     git push github --all
+    git push github --tags
     cd ../..
     
     cd ..
