@@ -83,8 +83,10 @@ do
     echo Ghosting the local checkout
     for fileName in $((find * -type f ; find * -type l) 2> /dev/null) ; do
       git update-index --assume-unchanged $fileName
-      rm -rf $fileName
     done
+    
+    echo Removing the now 'ghost' files...
+    [ -n "$(ls -A1 * 2> /dev/null)" ] && rm -rf *
 
     cd ..
   fi
