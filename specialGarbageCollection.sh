@@ -56,15 +56,11 @@ do
   if [ -d $svnFolder ]; then
     cd $svnFolder
     
-    echo Updating repo $svnFolder, through removing the local copy and pulling a new one back in
-    echo  - taking out the local copy
-    rm -rf *
-
-    echo  - doing the garbage collection
-    git gc
+    #This is now simply a matter of doing garbage collection, thanks
+    #to the script "saveSpaceOnSVNMirrors.sh"
     
-    echo  - checking out the local copy back in
-    git checkout -- *
+    echo Doing the garbage collection on repo $svnFolder
+    git gc
 
     cd ..
   fi
