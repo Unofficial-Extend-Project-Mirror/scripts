@@ -19,27 +19,6 @@
 #     Bruno Santos <wyldckat@github>
 #
 
-#Git based:
-for gitFolder in \
-  openfoam-extend-DensityBasedTurbo.git \
-  openfoam-extend-OpenFOAM-1.6-ext.git \
-  openfoam-extend-ShipHydroSIG.git \
-  openfoam-extend-UsbStickCreation.git \
-  openfoam-extend-foam-extend-3.0.git \
-  openfoam-extend-foam-extend-3.1.git
-do
-
-  if [ -d $gitFolder ]; then
-    cd $gitFolder
-    echo Updating repo $gitFolder
-    git remote update --prune
-    git gc
-    cd ..
-  fi
-
-done
-
-
 #SVN based:
 for svnFolder in \
   openfoam-extend-Core-OpenFOAM-1.5-dev \
@@ -76,34 +55,18 @@ do
 
   if [ -d $svnFolder ]; then
     cd $svnFolder
-    echo Updating repo $svnFolder
-    git svn rebase
+    
+    echo Ghosting repo $svnFolder, through blinding git from any file
+    echo changes and then removing those files/folders
+    find * -type f | xargs git update-index --assume-unchanged
+    
+    echo  - Removing the files that have been marked to ignore changes on
+    rm -rf *
 
-    echo Ghosting the local checkout
-    ( find * -type f | xargs git update-index --assume-unchanged ) && \
-      rm -rf *
+    echo  - doing a git garbage collection, just in case
+    git gc
+    
     cd ..
   fi
 
 done
-
-#Mercurial based:
-for hgFolder in \
-  openfoam-extend-swak4Foam-dev
-do
-
-  if [ -d $hgFolder ]; then
-    cd $hgFolder
-    echo Updating repo $hgFolder
-    hg pull
-    hg branches | sed 's=\([a-zA-Z0-9_./-]*\).*=\1=' | while read line; do 
-      if ! hg bookmark | grep "${line}_git" > /dev/null; then 
-        hg bookmark -r $line ${line}_git
-      fi
-    done
-    cd ..
-  fi
-
-done
-
-./specialGarbageCollection.sh
