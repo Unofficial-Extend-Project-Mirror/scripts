@@ -80,7 +80,7 @@ do
     git svn rebase
 
     echo Ghosting the local checkout
-    ( find * -type f | xargs git update-index --assume-unchanged ) && \
+    ( (find * -type f ; find * -type l) | xargs git update-index --assume-unchanged ) && \
       rm -rf *
     cd ..
   fi

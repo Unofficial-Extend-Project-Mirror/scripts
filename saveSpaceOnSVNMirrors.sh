@@ -58,7 +58,7 @@ do
     
     echo Ghosting repo $svnFolder, through blinding git from any file
     echo changes and then removing those files/folders
-    find * -type f | xargs git update-index --assume-unchanged
+    (find * -type f ; find * -type l) | xargs git update-index --assume-unchanged
     
     echo  - Removing the files that have been marked to ignore changes on
     rm -rf *
