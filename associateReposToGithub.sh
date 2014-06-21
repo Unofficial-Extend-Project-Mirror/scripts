@@ -27,7 +27,8 @@ for gitFolder in \
   openfoam-extend-OpenFOAM-1.6-ext.git \
   openfoam-extend-ShipHydroSIG.git \
   openfoam-extend-UsbStickCreation.git \
-  openfoam-extend-foam-extend-3.0.git
+  openfoam-extend-foam-extend-3.0.git \
+  openfoam-extend-foam-extend-3.1.git
 do
 
   if [ -d $gitFolder ]; then
