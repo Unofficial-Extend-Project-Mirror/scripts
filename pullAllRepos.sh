@@ -76,12 +76,16 @@ do
 
   if [ -d $svnFolder ]; then
     cd $svnFolder
+    
     echo Updating repo $svnFolder
     git svn rebase
 
     echo Ghosting the local checkout
-    ( (find * -type f ; find * -type l) | xargs git update-index --assume-unchanged ) && \
-      rm -rf *
+    for fileName in $((find * -type f ; find * -type l) 2> /dev/null) ; do
+      git update-index --assume-unchanged $fileName
+      rm -rf $fileName
+    done
+
     cd ..
   fi
 
