@@ -26,7 +26,8 @@ for gitFolder in \
   openfoam-extend-ShipHydroSIG.git \
   openfoam-extend-UsbStickCreation.git \
   openfoam-extend-foam-extend-3.0.git \
-  openfoam-extend-foam-extend-3.1.git
+  openfoam-extend-foam-extend-3.1.git \
+  openfoam-extend-swak4Foam-dev.git
 do
 
   if [ -d $gitFolder ]; then
@@ -88,25 +89,6 @@ do
     echo Removing the now 'ghost' files...
     [ -n "$(ls -A1 * 2> /dev/null)" ] && rm -rf *
 
-    cd ..
-  fi
-
-done
-
-#Mercurial based:
-for hgFolder in \
-  openfoam-extend-swak4Foam-dev
-do
-
-  if [ -d $hgFolder ]; then
-    cd $hgFolder
-    echo Updating repo $hgFolder
-    hg pull
-    hg branches | sed 's=\([a-zA-Z0-9_./-]*\).*=\1=' | while read line; do 
-      if ! hg bookmark | grep "${line}_git" > /dev/null; then 
-        hg bookmark -r $line ${line}_git
-      fi
-    done
     cd ..
   fi
 

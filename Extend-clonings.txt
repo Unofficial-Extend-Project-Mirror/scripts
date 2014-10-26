@@ -6,6 +6,9 @@ git clone --mirror git://git.code.sf.net/p/openfoam-extend/UsbStickCreation open
 git clone --mirror git://git.code.sf.net/p/openfoam-extend/foam-extend-3.0 openfoam-extend-foam-extend-3.0.git
 git clone --mirror git://git.code.sf.net/p/openfoam-extend/foam-extend-3.1 openfoam-extend-foam-extend-3.1.git
 
+#Git-remote-hg based:
+git clone --mirror hg::http://hg.code.sf.net/p/openfoam-extend/swak4Foam openfoam-extend-swak4Foam-dev.git
+
 #SVN based:
 git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Core/OpenFOAM-1.5-dev/ openfoam-extend-Core-OpenFOAM-1.5-dev
 git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder/other/scripting/PyFoam/ openfoam-extend-Breeder-other-scripting-PyFoam
@@ -37,18 +40,6 @@ git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_2.0/OSIG
 git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_2.0/libraries/swak4Foam/ openfoam-extend-Breeder2.0-libraries-swak4Foam
 git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_2.0/solvers/other/solidParticleFoam/ openfoam-extend-Breeder2.0-solvers-other-solidParticleFoam
 git svn clone svn://svn.code.sf.net/p/openfoam-extend/svn/trunk/Breeder_2.0/utilities/mesh/manipulation/MakeAxialMesh/ openfoam-extend-Breeder2.0-utilities-mesh-manipulation-MakeAxialMesh
-
-
-#hg to git
-hg clone http://hg.code.sf.net/p/openfoam-extend/swak4Foam openfoam-extend-swak4Foam-dev
-cd openfoam-extend-swak4Foam-dev
-hg checkout --clean null
-echo "[extensions]" >> .hg/hgrc
-echo "hgext.bookmarks =" >> .hg/hgrc
-echo "hggit =" >> .hg/hgrc
-hg branches | sed 's=\([a-zA-Z0-9_./-]*\).*=\1=' | while read line; do hg bookmark -r $line ${line}_git; done
-git init --bare .hg/openfoam-extend-swak4Foam-dev.git
-cd ..
 
 
 #Separating each repo to the respective mirroring machine:

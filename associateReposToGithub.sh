@@ -28,7 +28,8 @@ for gitFolder in \
   openfoam-extend-ShipHydroSIG.git \
   openfoam-extend-UsbStickCreation.git \
   openfoam-extend-foam-extend-3.0.git \
-  openfoam-extend-foam-extend-3.1.git
+  openfoam-extend-foam-extend-3.1.git \
+  openfoam-extend-swak4Foam-dev.git
 do
 
   if [ -d $gitFolder ]; then
@@ -82,31 +83,6 @@ do
     git remote add github git@github.com:${GITHUB_ACCOUNT_NAME}/${svnFolder}.git
     git branch --set-upstream-to=github/master master
     git push github --all
-    cd ..
-  fi
-
-done
-
-
-#Mercurial based:
-for hgFolder in \
-  openfoam-extend-swak4Foam-dev
-do
-
-  if [ -d $hgFolder ]; then
-    cd $hgFolder
-    echo Establishing git connection with $hgFolder
-    echo "[paths]" >> .hg/hgrc
-    echo "default-push = .hg/${hgFolder}.git" >> .hg/hgrc
-    echo "[git]" >> .hg/hgrc
-    echo "branch_bookmark_suffix=_git" >> .hg/hgrc
-
-    cd .hg/${hgFolder}.git
-    git remote add github git@github.com:${GITHUB_ACCOUNT_NAME}/${hgFolder}
-    git push github --all
-    git push github --tags
-    cd ../..
-    
     cd ..
   fi
 

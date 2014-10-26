@@ -26,7 +26,8 @@ for gitFolder in \
   openfoam-extend-ShipHydroSIG.git \
   openfoam-extend-UsbStickCreation.git \
   openfoam-extend-foam-extend-3.0.git \
-  openfoam-extend-foam-extend-3.1.git
+  openfoam-extend-foam-extend-3.1.git \
+  openfoam-extend-swak4Foam-dev.git
 do
 
   if [ -d $gitFolder ]; then
@@ -82,23 +83,3 @@ do
 
 done
 
-
-#Mercurial based:
-for hgFolder in \
-  openfoam-extend-swak4Foam-dev
-do
-
-  if [ -d $hgFolder ]; then
-    cd $hgFolder
-    echo Updating repo $hgFolder
-    hg push 2>&1 | sed 's='$PWD'/=='
-    
-    cd .hg/${hgFolder}.git
-    git push github --all
-    git push github --tags
-    cd ../..
-    
-    cd ..
-  fi
-
-done
