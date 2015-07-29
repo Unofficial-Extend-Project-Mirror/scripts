@@ -60,7 +60,7 @@ do
     #to the script "saveSpaceOnSVNMirrors.sh"
     
     echo Doing the garbage collection on repo $svnFolder
-    git gc
+    git gc --auto || find .git -name "tmp_*" | xargs rm
 
     cd ..
   fi
