@@ -5,6 +5,7 @@ git clone --mirror git://git.code.sf.net/p/openfoam-extend/ShipHydroSIG openfoam
 git clone --mirror git://git.code.sf.net/p/openfoam-extend/UsbStickCreation openfoam-extend-UsbStickCreation.git
 git clone --mirror git://git.code.sf.net/p/openfoam-extend/foam-extend-3.0 openfoam-extend-foam-extend-3.0.git
 git clone --mirror git://git.code.sf.net/p/openfoam-extend/foam-extend-3.1 openfoam-extend-foam-extend-3.1.git
+git clone --mirror git://git.code.sf.net/p/foam-extend/foam-extend-3.2 foam-extend-foam-extend-3.2.git
 
 #Git-remote-hg based:
 git clone --mirror hg::http://hg.code.sf.net/p/openfoam-extend/swak4Foam openfoam-extend-swak4Foam-dev.git

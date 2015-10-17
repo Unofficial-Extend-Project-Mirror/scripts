@@ -27,6 +27,7 @@ for gitFolder in \
   openfoam-extend-UsbStickCreation.git \
   openfoam-extend-foam-extend-3.0.git \
   openfoam-extend-foam-extend-3.1.git \
+  foam-extend-foam-extend-3.2.git \
   openfoam-extend-swak4Foam-dev.git
 do
 

@@ -27,6 +27,7 @@ for gitFolder in \
   openfoam-extend-UsbStickCreation.git \
   openfoam-extend-foam-extend-3.0.git \
   openfoam-extend-foam-extend-3.1.git \
+  foam-extend-foam-extend-3.2.git \
   openfoam-extend-swak4Foam-dev.git
 do
 
@@ -82,7 +83,7 @@ do
     git svn rebase
 
     echo Ghosting the local checkout
-    for fileName in $((find * -type f ; find * -type l) 2> /dev/null) ; do
+    for fileName in $( (find * -type f ; find * -type l) 2> /dev/null) ; do
       git update-index --assume-unchanged $fileName
     done
     
