@@ -6,6 +6,7 @@ git clone --mirror git://git.code.sf.net/p/openfoam-extend/UsbStickCreation open
 git clone --mirror git://git.code.sf.net/p/openfoam-extend/foam-extend-3.0 openfoam-extend-foam-extend-3.0.git
 git clone --mirror git://git.code.sf.net/p/openfoam-extend/foam-extend-3.1 openfoam-extend-foam-extend-3.1.git
 git clone --mirror git://git.code.sf.net/p/foam-extend/foam-extend-3.2 foam-extend-foam-extend-3.2.git
+git clone --mirror git://git.code.sf.net/p/foam-extend/foam-extend-4.0 foam-extend-foam-extend-4.0.git
 
 #Git-remote-hg based:
 git clone --mirror hg::http://hg.code.sf.net/p/openfoam-extend/swak4Foam openfoam-extend-swak4Foam-dev.git
@@ -93,6 +94,8 @@ openfoam-extend-ShipHydroSIG.git
 openfoam-extend-UsbStickCreation.git
 openfoam-extend-foam-extend-3.0.git
 openfoam-extend-foam-extend-3.1.git
+foam-extend-foam-extend-3.2.git
+foam-extend-foam-extend-4.0.git
 ; do
 
   ln -s $PWD/$a machine2/$a
