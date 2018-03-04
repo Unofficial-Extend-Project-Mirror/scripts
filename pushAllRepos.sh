@@ -29,7 +29,8 @@ for gitFolder in \
   openfoam-extend-foam-extend-3.1.git \
   foam-extend-foam-extend-3.2.git \
   foam-extend-foam-extend-4.0.git \
-  openfoam-extend-swak4Foam-dev.git
+  openfoam-extend-swak4Foam-dev.git \
+  cfMesh.git
 do
 
   if [ -d $gitFolder ]; then

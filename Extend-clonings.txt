@@ -7,6 +7,7 @@ git clone --mirror git://git.code.sf.net/p/openfoam-extend/foam-extend-3.0 openf
 git clone --mirror git://git.code.sf.net/p/openfoam-extend/foam-extend-3.1 openfoam-extend-foam-extend-3.1.git
 git clone --mirror git://git.code.sf.net/p/foam-extend/foam-extend-3.2 foam-extend-foam-extend-3.2.git
 git clone --mirror git://git.code.sf.net/p/foam-extend/foam-extend-4.0 foam-extend-foam-extend-4.0.git
+git clone --mirror git://git.code.sf.net/p/cfmesh/code cfMesh.git
 
 #Git-remote-hg based:
 git clone --mirror hg::http://hg.code.sf.net/p/openfoam-extend/swak4Foam openfoam-extend-swak4Foam-dev.git
